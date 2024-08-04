@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Common\RspCodeStr;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -22,7 +23,7 @@ class AuthController extends BaseController
         $password = $request->post('password', '');
 
         if (!$email || !$password) {
-            return $this->fail();
+            return $this->fail(RspCodeStr::PARAMETER_EMPTY);
         }
 
         $model = new AdminUser();

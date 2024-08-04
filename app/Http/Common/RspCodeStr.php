@@ -7,12 +7,18 @@ class RspCodeStr
 
     const SUCCESS = 0;
 
+    const PARAMETER_EMPTY = 100000;
+    const PARAMETER_ERROR = 100001;
+
     const UNAUTHORIZED = 400001;
 
     const FAIL = 500;
 
     const STATUS_TEXT = [
         self::SUCCESS  => '成功',
+
+        self::PARAMETER_EMPTY => '请求参数不能为空',
+        self::PARAMETER_ERROR => '参数错误',
 
         self::FAIL => '错误',
     ];
